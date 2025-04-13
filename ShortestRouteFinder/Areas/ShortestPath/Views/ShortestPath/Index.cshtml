@@ -1,0 +1,74 @@
+﻿@model ShortestRouteFinder.Models.ShortestPathResultModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-left">
+                    <h5 class="title">Shortest Path Finder</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="@Url.Action("Index", "ShortestPath")">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="control-label" for="fromNodeName">
+                                    From Node
+                                </label>
+                                <input type="text"
+                                       id="fromNodeName"
+                                       name="fromNodeName"
+                                       placeholder="From Node"
+                                       class="form-control"
+                                       required
+                                       aria-label="From Node"
+                                       autocomplete="off" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label" for="toNodeName">
+                                    To Node
+                                </label>
+                                <input type="text"
+                                       id="toNodeName"
+                                       name="toNodeName"
+                                       placeholder="To Node"
+                                       class="form-control"
+                                       required
+                                       aria-label="To Node"
+                                       autocomplete="off" />
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-left mt-2">
+                            <button type="submit" class="btn btn-success">Find Shortest Path</button>
+                        </div>
+                    </form>
+                    <div class="mt-4">
+                        <h3>Shortest Path</h3>
+                        @if (Model != null && Model.Path != null && Model.Path.Any())
+                        {
+                            <p>Path: @string.Join(" → ", Model.Path)</p>
+                        }
+                        else
+                        {
+                            <p class="text-warning">No path found between the nodes.</p>
+                        }
+
+                        <h3>Distance</h3>
+                        @if (Model != null)
+                        {
+                            <p>Distance: @Model.Distance</p>
+                        }
+                        else
+                        {
+                            <p class="text-warning">Distance: N/A</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

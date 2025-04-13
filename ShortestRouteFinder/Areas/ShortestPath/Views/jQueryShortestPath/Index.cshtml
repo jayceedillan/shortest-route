@@ -1,0 +1,133 @@
+﻿@model ShortestRouteFinder.Models.ShortestPathResultModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-left">
+                    <h5 class="title">Shortest Path Finder</h5>
+                </div>
+                <div class="card-body">
+                    <form id="shortestPathForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="control-label" for="fromNodeName">
+                                    From Node
+                                </label>
+                                <input type="text"
+                                       id="fromNodeName"
+                                       name="fromNodeName"
+                                       placeholder="From Node"
+                                       class="form-control"
+                                       required
+                                       aria-label="From Node"
+                                       autocomplete="off" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label" for="toNodeName">
+                                    To Node
+                                </label>
+                                <input type="text"
+                                       id="toNodeName"
+                                       name="toNodeName"
+                                       placeholder="To Node"
+                                       class="form-control"
+                                       required
+                                       aria-label="To Node"
+                                       autocomplete="off" />
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-left mt-2">
+                            <button type="submit" class="btn btn-success">Find Shortest Path</button>
+                        </div>
+                    </form>
+                    <div id="results" class="mt-4">
+                        <h3>Shortest Path</h3>
+                        <p id="path" class="text-warning">No path found between the nodes.</p>
+
+                        <h3>Distance</h3>
+                        <p  id="distance" class="text-warning">Distance: N/A</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#shortestPathForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const fromNodeName = $('#fromNodeName').val()?.trim();
+            const toNodeName = $('#toNodeName').val()?.trim();
+
+            if (!fromNodeName || !toNodeName) {
+                displayError("Both nodes must be specified.");
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("Index", "jQueryShortestPath")',
+                type: 'POST',
+                data: { fromNodeName, toNodeName },
+                success: function (data) {
+                    updatePathResult(data);
+                    updateDistanceResult(data);
+                },
+                error: function () {
+                    displayError("An error occurred while processing your request.");
+                }
+            });
+        });
+
+        function updatePathResult(data) {
+            const $path = $('#path');
+
+            if (data?.Path?.length > 0) {
+                $path
+                    .removeClass('text-warning')
+                    .text(`Path: ${data.Path.join(" → ")}`);
+            } else {
+                $path
+                    .addClass('text-warning')
+                    .text("Path: No path found.");
+            }
+        }
+
+        function updateDistanceResult(data) {
+            const $distance = $('#distance');
+
+            if (data?.Distance != null) {
+                if (data.Distance === -1) {
+                    $distance
+                        .addClass('text-warning')
+                        .text("Distance: No path found");
+                } else {
+                    $distance
+                        .removeClass('text-warning')
+                        .text(`Distance: ${data.Distance}`);
+                }
+            } else {
+                $distance
+                    .addClass('text-warning')
+                    .text("Distance: N/A");
+            }
+        }
+
+        function displayError(message) {
+            $('#path, #distance')
+                .addClass('text-warning')
+                .text(message);
+            }
+        });
+    </script>
+}

@@ -1,0 +1,11 @@
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\bin\Debug\net8.0\SharedLogic.deps.json
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\bin\Debug\net8.0\SharedLogic.dll
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\bin\Debug\net8.0\SharedLogic.pdb
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\SharedLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\SharedLogic.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\SharedLogic.AssemblyInfo.cs
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\SharedLogic.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\SharedLogic.dll
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\refint\SharedLogic.dll
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\SharedLogic.pdb
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\net8.0\ref\SharedLogic.dll

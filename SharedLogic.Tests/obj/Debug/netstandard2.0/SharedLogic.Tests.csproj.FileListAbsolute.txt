@@ -1,0 +1,5 @@
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic.Tests\obj\Debug\netstandard2.0\SharedLogic.Tests.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic.Tests\obj\Debug\netstandard2.0\SharedLogic.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic.Tests\obj\Debug\netstandard2.0\SharedLogic.Tests.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic.Tests\obj\Debug\netstandard2.0\SharedLogic.Tests.AssemblyInfo.cs
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic.Tests\obj\Debug\netstandard2.0\SharedLogic.Tests.csproj.CoreCompileInputs.cache
