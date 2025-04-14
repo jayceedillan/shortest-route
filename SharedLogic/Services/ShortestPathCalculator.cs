@@ -34,20 +34,7 @@ namespace SharedLogic.Services
             routeMap.AddRouteLink("G", "H", 5);
             routeMap.AddRouteLink("G", "I", 5);
             routeMap.AddRouteLink("I", "G", 5);
-            //routeMap.AddRouteLink("A", "B", 4);
-            //routeMap.AddRouteLink("A", "C", 6);
-            //routeMap.AddRouteLink("C", "D", 8);
-            //routeMap.AddRouteLink("E", "B", 2);
-            //routeMap.AddRouteLink("B", "F", 2);
-            //routeMap.AddRouteLink("E", "D", 4);
-            //routeMap.AddRouteLink("F", "E", 3);
-            //routeMap.AddRouteLink("F", "H", 6);
-            //routeMap.AddRouteLink("F", "G", 4);
-            //routeMap.AddRouteLink("D", "G", 1);
-            //routeMap.AddRouteLink("E", "I", 8);
-            //routeMap.AddRouteLink("G", "I", 5);
-            //routeMap.AddRouteLink("H", "G", 5);
-
+           
             return routeMap.AdjList;
         }
 
@@ -112,7 +99,7 @@ namespace SharedLogic.Services
                 };
         }
 
-        private List<string> ReconstructPath(Dictionary<string, string> previous, string end)
+        private List<string> ReconstructPath(Dictionary<string, string> pathHistory, string end)
         {
             var path = new List<string>();
             string current = end;
@@ -121,7 +108,7 @@ namespace SharedLogic.Services
             while (current != null)
             {
                 path.Insert(0, current);
-                current = previous[current];
+                current = pathHistory[current];
             }
 
             return path;

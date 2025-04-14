@@ -8,3 +8,4 @@ C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\netsta
 C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\netstandard2.0\SharedLogic.csproj.CoreCompileInputs.cache
 C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\netstandard2.0\SharedLogic.dll
 C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\netstandard2.0\SharedLogic.pdb
+C:\Users\USER\Desktop\virtualIT\ShortestRouteFinder\SharedLogic\obj\Debug\netstandard2.0\SharedLogic.sourcelink.json
